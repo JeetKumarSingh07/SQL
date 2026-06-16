@@ -1,0 +1,29 @@
+CREATE DATABASE riti_db;
+
+USE riti_db;
+create table jeet
+(id int not null primary key
+);
+insert into jeet
+values
+(1),
+(4);
+drop table jeet ;
+create table school
+(Roll int not null primary key,
+class int,
+name varchar(50),
+Mothername varchar(50),
+mob_no bigint not null,
+check (mob_no between 1000000000 and 9999999999)
+);
+describe school;
+insert into school
+values (1,1,"Jeet","Punam singh",1233211234);
+create table courses(roll int ,
+name varchar(10),
+foreign key (roll )references school(roll)
+);
+insert into courses
+values (1,"jeet");
+
