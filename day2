@@ -1,0 +1,74 @@
+use riti_db;
+select * from employees;
+truncate employees;
+insert into employees(id,name,age,department,city,salary)
+value
+(1, 'Amit', 24, 'IT', 'Delhi', 35000),
+(2, 'Rahul', 26, 'HR', 'Mumbai', 32000),
+(3, 'Priya', 23, 'Finance', 'Pune', 38000),
+(4, 'Neha', 28, 'Marketing', 'Jaipur', 42000),
+(5, 'Rohit', 30, 'IT', 'Bangalore', 50000),
+(6, 'Anjali', 25, 'HR', 'Chandigarh', 34000),
+(7, 'Vikas', 27, 'Finance', 'Lucknow', 39000),
+(8, 'Sneha', 29, 'Marketing', 'Indore', 45000),
+(9, 'Karan', 31, 'IT', 'Hyderabad', 55000),
+(10, 'Pooja', 24, 'HR', 'Delhi', 33000),
+(11, 'Arjun', 26, 'Finance', 'Mumbai', 40000),
+(12, 'Meera', 27, 'Marketing', 'Pune', 44000),
+(13, 'Sanjay', 32, 'IT', 'Bangalore', 60000),
+(14, 'Kavita', 25, 'HR', 'Jaipur', 35000),
+(15, 'Deepak', 28, 'Finance', 'Chandigarh', 41000),
+(16, 'Nisha', 30, 'Marketing', 'Lucknow', 47000),
+(17, 'Manish', 29, 'IT', 'Indore', 52000),
+(18, 'Ritu', 24, 'HR', 'Hyderabad', 34000),
+(19, 'Abhishek', 27, 'Finance', 'Delhi', 43000),
+(20, 'Simran', 26, 'Marketing', 'Mumbai', 46000),
+(21, 'Varun', 33, 'IT', 'Pune', 65000),
+(22, 'Ayesha', 25, 'HR', 'Bangalore', 36000),
+(23, 'Nitin', 28, 'Finance', 'Jaipur', 42000),
+(24, 'Shreya', 29, 'Marketing', 'Chandigarh', 48000),
+(25, 'Gaurav', 31, 'IT', 'Lucknow', 57000),
+(26, 'Komal', 24, 'HR', 'Indore', 34000),
+(27, 'Rakesh', 27, 'Finance', 'Hyderabad', 44000),
+(28, 'Divya', 28, 'Marketing', 'Delhi', 49000),
+(29, 'Harsh', 30, 'IT', 'Mumbai', 58000),
+(30, 'Isha', 25, 'HR', 'Pune', 35000),
+(31, 'Yash', 26, 'Finance', 'Bangalore', 45000),
+(32, 'Tanvi', 27, 'Marketing', 'Jaipur', 50000),
+(33, 'Mohit', 34, 'IT', 'Chandigarh', 70000),
+(34, 'Payal', 24, 'HR', 'Lucknow', 34000),
+(35, 'Ankit', 29, 'Finance', 'Indore', 46000),
+(36, 'Sakshi', 30, 'Marketing', 'Hyderabad', 52000),
+(37, 'Ravi', 32, 'IT', 'Delhi', 62000),
+(38, 'Preeti', 26, 'HR', 'Mumbai', 36000),
+(39, 'Vivek', 28, 'Finance', 'Pune', 47000),
+(40, 'Muskan', 27, 'Marketing', 'Bangalore', 51000),
+(41, 'Aditya', 35, 'IT', 'Jaipur', 75000),
+(42, 'Sonam', 25, 'HR', 'Chandigarh', 35000),
+(43, 'Akash', 30, 'Finance', 'Lucknow', 48000),
+(44, 'Jyoti', 29, 'Marketing', 'Indore', 53000),
+(45, 'Naveen', 33, 'IT', 'Hyderabad', 68000),
+(46, 'Rekha', 24, 'HR', 'Delhi', 34000),
+(47, 'Suresh', 27, 'Finance', 'Mumbai', 45000),
+(48, 'Bhavna', 28, 'Marketing', 'Pune', 50000),
+(49, 'Tarun', 31, 'IT', 'Bangalore', 61000),
+(50, 'Pallavi', 26, 'HR', 'Jaipur', 36000);
+select * from employees where age >24 and department ='IT';
+select * from employees where age <24 or department ='IT';
+select * from employees where department not in ('IT','HR');
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+WHERE department IN ('IT', 'HR')
+GROUP BY department;
+
+
+
+
+
+
+
+
+
+
+
+
