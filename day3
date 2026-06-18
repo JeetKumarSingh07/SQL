@@ -1,0 +1,72 @@
+use riti_db;
+create table customer( customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    phone VARCHAR(15),
+    address VARCHAR(255)
+);
+
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    total_amount DECIMAL(10,2),
+    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+);
+truncate customer;
+SET FOREIGN_KEY_CHECKS = 0;
+
+insert into customer
+values
+(1, 'Prince', 'prince@gmail.com', '9876543210',' '),
+(2, 'Rahul', 'rahul@gmail.com', '9876543211', 'Delhi'),
+(3, 'Aman', 'aman@gmail.com', '9876543212', 'Mumbai');
+
+insert into Orders
+values(101, 1, '2025-06-18', 1500.00),
+(102, 1, '2025-06-19', 2500.00),
+(103, 2, '2025-06-20', 1800.00);
+
+select * from customer inner join Orders on customer.customer_id=Orders.customer_id;
+select * from customer left join Orders on customer.customer_id=Orders.customer_id;
+select * from customer right join Orders on customer.customer_id=Orders.customer_id;
+
+
+SELECT *
+FROM customer
+LEFT JOIN orders
+ON customer.customer_id = orders.customer_id
+
+UNION
+
+SELECT *
+FROM customer
+RIGHT JOIN orders
+ON customer.customer_id = orders.customer_id;
+
+select * from customer cross join orders;
+
+
+
+-- exclusive join
+
+-- exclusive left join 
+
+select *  from customer left join orders
+on customer.customer_id=orders.customer_id
+where orders.customer_id is null;
+
+-- exclusive right join
+
+select * from customer right join orders on customer.customer_id= orders.customer_id 
+where customer.customer_id is null;
+
+
+-- exclusive full join 
+
+select *  from customer left join orders
+on customer.customer_id=orders.customer_id
+where orders.customer_id is null
+union
+select * from customer right join orders on customer.customer_id= orders.customer_id 
+where customer.customer_id is null;
