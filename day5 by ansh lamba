@@ -1,0 +1,30 @@
+
+SELECT * FROM ashulamba.dim_customer;
+select customer_id,first_name from dim_customer;
+select * from dim_customer where gender = 'M' and country='france'and join_date >2023-01-31;
+
+
+-- second like 
+select * from dim_customer where first_name like 'J__h%a';
+select * from dim_product order by unit_price desc;
+select category 
+, avg(unit_price),
+sum(unit_price)
+ from
+          dim_product
+                group by category
+     ;
+ -- select category , avg(unit_price) from dim_product group by category , where avg(unit_price) >4000;
+ 
+ 
+ 
+ 
+ 
+ select category 
+, avg(unit_price) as avg_price,
+sum(unit_price)
+ from
+     dim_product
+ group by    category
+ having avg_price >500
+     ;
